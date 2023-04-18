@@ -30,4 +30,4 @@ df=df.iloc[:248]
 csv_path=path+'\Gas-Imports.csv'
 
 df.to_csv(csv_path,index=False)
-df.close()
+driver.close()
