@@ -4,8 +4,6 @@ import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 import pandas as pd
-# import requests
-# from bs4 import BeautifulSoup
 import os
 
 DIR_PATH = os.path.abspath(os.path.dirname(__file__))
