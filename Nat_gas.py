@@ -17,7 +17,6 @@ driver.get("https://www.cores.es/en/estadisticas")
 driver.maximize_window()
 time.sleep(5)
 driver.find_element(By.CSS_SELECTOR,"a[title='gas-imports.xlsx']").send_keys(Keys.ENTER)
-time.sleep(5)
 
 path=DIR_PATH+"\_Output"
 df = pd.read_excel(path+"\gas-imports.xlsx", sheet_name='All',usecols='A:Q',header=5)
