@@ -19,6 +19,6 @@ time.sleep(5)
 driver.find_element(By.CSS_SELECTOR,"a[title='gas-imports.xlsx']").send_keys(Keys.ENTER)
 
 path=DIR_PATH+"\_Output"
-df = pd.read_excel(path+"\gas-imports.xlsx", sheet_name='All',usecols='A:Q',header=5)
+df = pd.read_excel(path+"\gas-imports.xlsx", sheet_name='Africa',usecols='A:Q',header=5)
 df=df.iloc[:248]
 df.to_csv('Gas-Imports.csv',index=False)
