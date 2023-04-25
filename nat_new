@@ -26,13 +26,16 @@ def process_file():
     path=os.path.abspath('gas-imports.xlsx')
     df=pd.read_excel(path,sheet_name='Africa',usecols='A:Q',header=5)
     df=df.loc[:248]
+    melted_df = df.melt(id_vars=['Year', 'Month'], value_vars=df.loc['Algeria':'Total Africa NG'], var_name='Country',
+                        value_name='Value (GWh)')
+    melted_df = melted_df.round(1)
     path = DIR_PATH+ folder_name
     print(path)
     try:
         os.mkdir(path)
     except OSError as error:
         print(error)
-    df.to_csv(os.path.join(path,'Gas-Imports1.csv'),index=False)
+    melted_df.to_csv(os.path.join(path,'Gas-Imports.csv'),index=False)
 
-# download_file("D:/selenium/chromedriver.exe")
+download_file("D:/selenium/chromedriver.exe")
 process_file()
